@@ -12,7 +12,7 @@ double_letter_counts_dict = load_file('double_counts.csv')
 triple_letter_counts_dict = load_file('triple_counts.csv')
 quadruple_letter_counts_dict = load_file('quadruple_counts.csv')
 
-# Step 2: Calculate the probabilities
+# Step 1: Calculate the probabilities
 def calculate_probabilities(counts_dict):
     total_letter_count = sum(counts_dict.values())
     probabilities = {}
@@ -25,7 +25,7 @@ double_letter_probabilities = calculate_probabilities(double_letter_counts_dict)
 triple_letter_probabilities = calculate_probabilities(triple_letter_counts_dict)
 quadruple_letter_probabilities = calculate_probabilities(quadruple_letter_counts_dict)
 
-# Step 3: Calculate the entropies
+# Step 2: Calculate the entropies
 
 def calculate_entropy(probabilities):
     return -np.sum([p * np.log2(p) for p in probabilities if p > 0])
